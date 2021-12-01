@@ -85,14 +85,14 @@ const Home = () => {
   return (
     <>
       <div className="login-container">
+        <button onClick={handleAdmin} className="admin-login">
+          Entrar como admin
+        </button>
         <section className="login-titles">
           <h1>
             BUGGY &<br /> BUMPER, INC
           </h1>
           <h2>LA MEJOR RED DE ALQUILER DE AUTOS</h2>
-          <button onClick={handleAdmin} className="admin-login">
-            Entrar como admin
-          </button>
         </section>
         <img src={homeCircleImage} alt="Buggy Bumper Home car" />
       </div>

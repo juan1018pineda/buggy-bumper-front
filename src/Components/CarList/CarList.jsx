@@ -55,7 +55,7 @@ const CarList = ({ auth, setAuth }) => {
   const logOut = () => {
     localStorage.removeItem("authorized");
     setAuth(false);
-    navigate("/login");
+    navigate("/");
   };
 
   return (

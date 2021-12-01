@@ -4,6 +4,18 @@ img {
   margin: auto 4rem auto 0;
 }
 
+.admin-login {
+  margin: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+}
+
+.admin-login:hover {
+  background-color: #cc5227;
+}
+
 .cars {
   background-color: #232120;
   padding-bottom: 4rem;

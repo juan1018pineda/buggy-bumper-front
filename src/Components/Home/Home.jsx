@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import "./Home.scss";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [cars, setCars] = useState([]);
   const [selectedCar, setSelectedCar] = useState();
   const [rentalDates, setRentalDates] = useState({
@@ -21,7 +23,10 @@ const Home = () => {
     rentalData: undefined,
   });
   const scrollRef = useRef(null);
-  const navigate = useNavigate();
+
+  const handleAdmin = () => {
+    navigate("/login");
+  };
 
   const getTotalRental = () => {
     const { from, to } = rentalDates;
@@ -32,10 +37,6 @@ const Home = () => {
     } else {
       setPrice(total);
     }
-  };
-
-  const handleAdmin = () => {
-    navigate("/login");
   };
 
   const handleSelect = (i) => {
@@ -89,7 +90,9 @@ const Home = () => {
             BUGGY &<br /> BUMPER, INC
           </h1>
           <h2>LA MEJOR RED DE ALQUILER DE AUTOS</h2>
-          <button onClick={handleAdmin}>Entrar como admin</button>
+          <button onClick={handleAdmin} className="admin-login">
+            Entrar como admin
+          </button>
         </section>
         <img src={homeCircleImage} alt="Buggy Bumper Home car" />
       </div>

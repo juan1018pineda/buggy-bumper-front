@@ -13,9 +13,10 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route exact path="/" element={<Home />}></Route>
         <Route
           exact
-          path="/"
+          path="/login"
           element={<Login auth={auth} setAuth={setAuth} />}
         ></Route>
         <Route
@@ -23,7 +24,6 @@ function App() {
           path="/admin"
           element={<CarList auth={auth} setAuth={setAuth} />}
         ></Route>
-        <Route exact path="/home" element={<Home />}></Route>
       </Routes>
     </Router>
   );

@@ -29,7 +29,7 @@ const CarList = ({ auth, setAuth }) => {
 
   useEffect(() => {
     if (!auth) {
-      navigate("/");
+      navigate("/login");
     } else {
       const loadCars = async () => {
         const cars = await axios.get(`${API_URL}/cars`);
@@ -55,7 +55,7 @@ const CarList = ({ auth, setAuth }) => {
   const logOut = () => {
     localStorage.removeItem("authorized");
     setAuth(false);
-    navigate("/");
+    navigate("/login");
   };
 
   return (

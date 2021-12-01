@@ -4,6 +4,7 @@ import axios from "axios";
 import { Card, Button, Form, Row, Col } from "react-bootstrap";
 import Pay from "../Pay";
 import { API_URL } from "../../constants";
+import { useNavigate } from "react-router-dom";
 
 import "./Home.scss";
 
@@ -20,6 +21,7 @@ const Home = () => {
     rentalData: undefined,
   });
   const scrollRef = useRef(null);
+  const navigate = useNavigate();
 
   const getTotalRental = () => {
     const { from, to } = rentalDates;
@@ -30,6 +32,10 @@ const Home = () => {
     } else {
       setPrice(total);
     }
+  };
+
+  const handleAdmin = () => {
+    navigate("/login");
   };
 
   const handleSelect = (i) => {
@@ -83,6 +89,7 @@ const Home = () => {
             BUGGY &<br /> BUMPER, INC
           </h1>
           <h2>LA MEJOR RED DE ALQUILER DE AUTOS</h2>
+          <button onClick={handleAdmin}>Entrar como admin</button>
         </section>
         <img src={homeCircleImage} alt="Buggy Bumper Home car" />
       </div>

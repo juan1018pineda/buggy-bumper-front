@@ -23,7 +23,7 @@ const NewCar = ({ addModal, setAddModal, setCars }) => {
       seats: seats.value,
       bags: bags.value,
       price: parseInt(price.value) || 0,
-      image: imageName,
+      image: imageName.replace(/\s+/g, "").toLowerCase(),
       file: file || null,
     };
 

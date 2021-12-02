@@ -31,7 +31,7 @@ const EditCar = ({ editModal, setEditModal, setCars, car }) => {
       seats: seats.value,
       bags: bags.value,
       price: parseInt(price.value) || 0,
-      image: imageName.replace(/\s+/g, "").toLowerCase(),
+      image: imageName.replace(/\s+/g, "-").toLowerCase(),
       file: file || null,
     };
     const finalCar = await editCar(carId, updatedCar);
